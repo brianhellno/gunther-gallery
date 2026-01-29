@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gunther Gallery</title>
+  <meta name="description" content="A private Gunther photo gallery." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="dot" aria-hidden="true"></div>
+      <div class="titles">
+        <h1>Gunther Gallery</h1>
+        <p class="sub">Chronological scroll • served from Brian’s phone</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="modeBtn" class="btn" type="button" title="Toggle compact/large thumbnails">
+        Toggle size
+      </button>
+      <button id="refreshBtn" class="btn" type="button" title="Reload the folder listing">
+        Refresh
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="status" id="status">
+      <div class="spinner" aria-hidden="true"></div>
+      <div>
+        <div class="status-title">Loading Photos…</div>
+        <div class="status-sub">Reading folder: <code>/Photos/</code></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lbBackdrop"></div>
+    <figure class="lightbox-figure">
+      <img id="lbImg" alt="" />
+      <figcaption class="lightbox-caption">
+        <div id="lbTitle" class="cap-title"></div>
+        <div class="cap-actions">
+          <a id="lbOpen" class="link" href="#" target="_blank" rel="noopener">Open original</a>
+          <span class="sep">•</span>
+          <button id="lbClose" class="linkbtn" type="button">Close</button>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
